@@ -4,9 +4,302 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document2</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Document</title>
 </head>
 <body>
-    
+    <center>
+       
+            <h1 id="palabra" style="font-size: 11vw;">Palabra</h1>
+
+
+        
+        
+    <button onclick="Cambiar()" class="btn btn-primary">Cambiar Palabra</button>
+    <button onclick="traduccion()" class="btn btn-info">traduccion</button></center>
+    <center><h1 id="cantidadpalabras" >0</h1>
+
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <button type="button" onclick="nube()" class="btn btn-dark">Nube</button>
+                <h1 id="nube">0</h1>
+              </div>
+              <div class="col">
+                
+
+              </div>
+              <div class="col">
+                <button type="button" onclick="limon()" class="btn btn-primary">Limon</button>
+
+                <h1 id="limon">0</h1>
+              </div>
+            </div>
+          </div>
 </body>
 </html>
+<script>
+
+var palabra = [
+
+"ask out",
+"be off",
+"beat up",
+"blow up",
+"blow out",
+"break down",
+"break up",
+"bring up",
+"bring it on!",
+"bump into",
+"butt in", 
+"call off",
+"care about",
+"carry on",
+"carry out",
+"catch up",
+"cheat on",
+"cheer sb. up (cheer you up)",
+"chop up",
+"close down",
+"come across",
+"come down to",
+"come down with",
+"come in",
+"come over",
+"count on",
+"cut down on",
+"doze off",
+"dress up",
+"drop in",
+"drop off",
+"drop out",
+"eat up",
+"eat out",
+"end up",
+"fall behind",
+"fall out with sb (you, I, Tom)",
+"fall over",
+"fill in",
+"fill in for sb (me, you...)",
+"fill up",
+"find out",
+"freak out",
+"get away from",
+"get away with something",
+"get down",
+"get sb. down",
+"get in/out",
+"get on/off",
+"get on (well) with",
+"get over",
+"give in",
+"give up",
+"grow up",
+"go away", 
+"go off",
+"go through",
+"hang on",
+"hang up",
+"head back",
+"heat up", 
+"hold on",
+"hurry up",
+"keep on",
+"keep up",
+"kick out",
+"knock sb out",
+"knock over",
+"let somebody down",
+"let off",
+"lighten up", 
+"look after",
+"look into",
+"look sth/sb up",
+"look forward to",
+"make up",
+"pay back",
+"pick up",
+"plug in",
+"put on",
+"put out",
+"put off",
+"put up with",
+"rip off",
+"run into",
+"run out of",
+"run over",
+"sell out",
+"set off",
+"show off",
+"shut up",
+"slow down",
+"sort out",
+"take off",
+"take after",
+"tell someone off",
+"throw away",
+"turn down",
+"watch out",
+"work out"
+
+];
+
+var atraduccion = [
+
+"pedirle salir a alguien",
+"largarse",
+"golpearse",
+"explotar",
+"apagar (soplando)",
+"averiarse",
+"separarse romper una relación sentimental",
+"criar/sacar un tema",
+"bring it on!",
+"encontrarse con alguien/chocarse con",
+"interrumpir/quitar la palabra",
+"suspender/cancelar",
+"preocuparse por / importarte algo o alguien",
+"seguir",
+"llevar a cabo",
+"ponerse al día/pillar a / alcanzar",
+"se infiel /engañar",
+"animar a aguien",
+"picar/ trocear",
+"cerrar permanentemente",
+"toparse con / encontrar / descubrir",
+"reducirse a/bajar a",
+"Caer enfermo",
+"entrar/pasar",
+"venirse/pasarse",
+"contar con / fiarse de",
+"Reducir el consumo de",
+"quedarse frito/dormido",
+"vestirse elegante / ponerse guapa/o / disfrazarse",
+"Pasarse sin concretar una hora",
+"Dejar a",
+"dejar algo a medias, abandonar",
+"terminar la comida",
+"Salir a comer fuera",
+"acabar haciendo algo en un lugar que no estaba previsto",
+"retrasarse",
+"Enfadarse, reñir, dejar de ser amigos, dejar de hablarse",
+"caerse",
+"rellenar, completar",
+"sustituir",
+"llenar",
+"descubrir/ averiguar",
+"asustarse/ entrar en pánico / ponerse como loco, perder los papeles",
+"escapar de / alejarse",
+"quedar impune, sin castigo",
+"bajarse",
+"desanimar",
+"subir/ bajar transporte privado, entrar / salir",
+"subir / bajar transporte público",
+"llevarse bien",
+"superar, recuperarse",
+"rendirse, ceder",
+"dejar, abandonar",
+"crecer, hacerse mayor, madurar",
+"irse / largarse / irse de viaje",
+"estropearse, caducar",
+"cruzar/pasar/sufrir / pasarlo mal/revisar",
+"esperar/aguantar/guardar algo, aferrarse a algo",
+"colgar el telefono/colgar algo",
+"volver, regresar",
+"calentar",
+"resistir/aguantar,conservar/Agarrase a algo",
+"darse prisa",
+"seguir/dejar puesto",
+"seguir el ritmo/estar al tanto de/sigue así",
+"expulsar",
+"dejar inconsciente/dejar pasmado/sorprender",
+"arrollar, atropellar/derribar, tirar",
+"decepcionar a alguien",
+"Dejar absuelto, libre",
+"relajarse/despreocuparse",
+"cuidar",
+"investigar, buscar, evaluar",
+"buscar",
+"tener muchas ganas de",
+"inventar/hacer las paces",
+"devolver dinero/vengarse con alguien por algo",
+"recoger en un vehículo/contestar el telefono/aprender fácilmente/mejorar",
+"enchufar",
+"Ponerse (ropa/zapatos)",
+"incomodar/apagar/",
+"repugnar, causar rechazo, quitar las ganas",
+"tolerar/aguantar",
+"arrancar/estafar/timar a alguien/copiar",
+"tropezarse/encontrarse",
+"quedarse sin",
+"atropellar",
+"agotarse",
+"salir",
+"presumir/fanfarronear",
+"callarse",
+"reducir la velocidad",
+"solucionar/resolver/poner en orden",
+"quitarse/despegar",
+"parecerse",
+"regañar",
+"tirar",
+"rechazar",
+"Estar atento / tener cuidado",
+"hacer ejercicio, entrenar/calcular/resolver, solucionar/"
+
+];
+
+
+var guardados = [];
+var numero = 0;
+var palabrausada = "";
+var cantidadpalabras = 0;
+var limite = 100;
+function Cambiar(){
+        numero = getRandomInt(limite);
+
+          palabrausada = palabra[numero];
+if(cantidadpalabras < limite){
+
+    if(guardados.includes(palabrausada)){
+            while(guardados.includes(palabrausada)){
+                numero = getRandomInt(limite);
+                palabrausada = palabra[numero];
+            }
+            cantidadpalabras++;
+            document.getElementById("palabra").textContent = palabrausada;
+            guardados.push(palabrausada);
+        }else{
+            document.getElementById("palabra").textContent = palabrausada;
+            guardados.push(palabrausada);
+            cantidadpalabras++;
+        }
+        document.getElementById("cantidadpalabras").textContent = cantidadpalabras;
+
+}else{
+    document.getElementById("palabra").textContent = "COMPLETADO";
+}
+        
+
+ 
+}
+function traduccion(){
+
+        alert(atraduccion[numero]);
+
+}
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+function nube(){
+    document.getElementById("nube").textContent = parseInt(document.getElementById("nube").textContent) + 1;
+}
+
+function limon(){
+    document.getElementById("limon").textContent = parseInt(document.getElementById("limon").textContent) + 1;
+}
+alert(palabra.includes("angry"));
+
+</script>
