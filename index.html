@@ -257,22 +257,40 @@ var numero = 0;
 var palabrausada = "";
 var cantidadpalabras = 0;
 var limite = 100;
+var tipo = 0;
 function Cambiar(){
         numero = getRandomInt(limite);
+        tipo = getRandomInt(2);
 
-          palabrausada = palabra[numero];
+
+          palabrausada = numero;
 if(cantidadpalabras < limite){
 
     if(guardados.includes(palabrausada)){
             while(guardados.includes(palabrausada)){
                 numero = getRandomInt(limite);
-                palabrausada = palabra[numero];
+                palabrausada = numero;
             }
             cantidadpalabras++;
-            document.getElementById("palabra").textContent = palabrausada;
+
+            //Para establecer si la palabra va en español o en ingles: 0(ingles), 1(español)
+
+            if(tipo == 0){
+                document.getElementById("palabra").textContent = palabra[palabrausada];
+            
+            }else{
+                document.getElementById("palabra").textContent = atraduccion[palabrausada];
+            }
+
             guardados.push(palabrausada);
+            
         }else{
-            document.getElementById("palabra").textContent = palabrausada;
+            if(tipo == 0){
+                document.getElementById("palabra").textContent = palabra[palabrausada];
+            
+            }else{
+                document.getElementById("palabra").textContent = atraduccion[palabrausada];
+            }
             guardados.push(palabrausada);
             cantidadpalabras++;
         }
@@ -287,7 +305,13 @@ if(cantidadpalabras < limite){
 }
 function traduccion(){
 
-        alert(atraduccion[numero]);
+
+            if(tipo == 0){
+             alert(atraduccion[numero]);
+            
+            }else{
+                alert(palabra[numero]);
+            }
 
 }
 function getRandomInt(max) {
