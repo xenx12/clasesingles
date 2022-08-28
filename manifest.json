@@ -2,17 +2,18 @@
     "name": "ClasesIngles",
     "short_name": "Ingles",
     "start_url": ".",
+    "display": "standalone",
     "background_color": "#2A3443",
     "description": "Aprendizaje de Ingles",
     "theme_color": "#2A3443",
     "icon": [
         {
-            "src": "./img/large.png",
+            "src": "./image/large.png",
             "sizes": "512x512",
             "type": "image/png"
         },
         {
-            "src": "./img/small.png",
+            "src": "./image/small.png",
             "sizes": "128x128",
             "type": "image/png"
         }
